@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Api.Tests", "Gree
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Domain", "GreenRoad.Domain\GreenRoad.Domain.csproj", "{B7557BA8-DCC0-4841-AD63-A11F4CE99415}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.DataAccess", "GreenRoad.DataAccess\GreenRoad.DataAccess.csproj", "{49E60013-D8D8-4561-A953-146FCAB51F09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B7557BA8-DCC0-4841-AD63-A11F4CE99415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7557BA8-DCC0-4841-AD63-A11F4CE99415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7557BA8-DCC0-4841-AD63-A11F4CE99415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E60013-D8D8-4561-A953-146FCAB51F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E60013-D8D8-4561-A953-146FCAB51F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E60013-D8D8-4561-A953-146FCAB51F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E60013-D8D8-4561-A953-146FCAB51F09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
