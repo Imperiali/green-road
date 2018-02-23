@@ -6,7 +6,7 @@ using System.Web;
 
 namespace GreenRoad.Web.Models.Account
 {
-    public class RegisterViewModel
+    public class LoginViewModel
     {
         [Required]
         [EmailAddress]
@@ -17,12 +17,5 @@ namespace GreenRoad.Web.Models.Account
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
-
-        [Required]
-        [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Senhas não batem")]
-        [Display(Name = "Confirm Password")]
-        public string ConfirmPassword { get; set; }
-
     }
 }
