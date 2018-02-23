@@ -54,7 +54,18 @@ namespace GreenRoad.Web.Controllers
 
                 }
             }
-            return View();
+            return View(viewModel);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && _client != null)
+            {
+                _client.Dispose();
+                _client = null;
+            }
+            base.Dispose(disposing);
+        }
+
     }
 }
