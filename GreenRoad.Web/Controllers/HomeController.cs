@@ -34,15 +34,15 @@ namespace GreenRoad.Web.Controllers
         {
             return View();
         }
-        //[Authentication]
+        [Authentication]
         public async Task<ActionResult> Value()
         {
             if (_helper.AccessToken != null)
             {
                 _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", $"{_helper.AccessToken}");
-                var response = await _client.GetAsync("api/Values/5");
+                var response = await _client.GetAsync("api/Values");
 
-                ViewBag.Message = response.Content.ReadAsStringAsync().Result;
+                //ViewBag.Message = response.Content.ReadAsStringAsync().Result;
 
                 return View();
             }

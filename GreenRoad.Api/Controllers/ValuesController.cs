@@ -19,7 +19,8 @@ namespace GreenRoad.Api.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            var username = RequestContext.Principal.Identity.Name;
+            return String.Format("Hello {0},", username);
         }
 
         // POST api/values

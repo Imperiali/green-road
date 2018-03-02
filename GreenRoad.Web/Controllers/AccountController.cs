@@ -51,7 +51,7 @@ namespace GreenRoad.Web.Controllers
         // POST: Account/Register
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(LoginViewModel viewModel)
+        public async Task<ActionResult> Register(RegisterViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
@@ -59,11 +59,11 @@ namespace GreenRoad.Web.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-
+                    return RedirectToAction("Value", "Home");
                 }
                 else
                 {
-
+                    ModelState.AddModelError("", "Usuario não encontrado");
                 }
             }
             return View(viewModel);
@@ -98,10 +98,11 @@ namespace GreenRoad.Web.Controllers
                         var responseContent = await response.Content.ReadAsStringAsync();
                         var tokenData = JObject.Parse(responseContent);
                         _helper.AccessToken = tokenData["access_token"];
+                        return RedirectToAction("Value", "Home");
                     }
                     else
                     {
-                        ModelState.AddModelError("", "");
+                        ModelState.AddModelError("", "Usuario não encontrado");
                     }
                 }
 
@@ -109,6 +110,33 @@ namespace GreenRoad.Web.Controllers
             return View(viewModel);
            
         }
+
+        //// GET: Account/Register
+        //public ActionResult Logout()
+        //{
+        //    return View();
+        //}
+
+        // POST: Account/Register
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> Logout()
+        //{
+        //    var response = await _client.PostAsync("api/Account/Logout");
+
+        //    if (response.IsSuccessStatusCode)
+        //    {
+
+        //        return RedirectToAction("Login", "Account");
+        //        //return RedirectToAction("Value", "Home");
+        //    }
+        //    else
+        //    {
+        //        ModelState.AddModelError("", "Usuario não encontrado");
+        //    }
+
+        //    return RedirectToAction("Login", "Account");
+        //}
 
         protected override void Dispose(bool disposing)
         {
