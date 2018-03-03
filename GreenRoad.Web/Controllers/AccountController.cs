@@ -69,13 +69,13 @@ namespace GreenRoad.Web.Controllers
             return View(viewModel);
         }
 
-        // GET: Account/Register
+        // GET: Account/Login
         public ActionResult Login()
         {
             return View();
         }
 
-        // POST: Account/Register
+        // POST: Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel viewModel)
@@ -111,32 +111,33 @@ namespace GreenRoad.Web.Controllers
            
         }
 
-        //// GET: Account/Register
+        // GET: Account/Logout
         //public ActionResult Logout()
         //{
         //    return View();
         //}
 
-        // POST: Account/Register
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Logout()
-        //{
-        //    var response = await _client.PostAsync("api/Account/Logout");
+        //POST: Account/Logout        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Logout()
+        {
+            if (_helper.AccessToken != null)
+            {
+                _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", $"{_helper.AccessToken}");
+                var response = await _client.GetAsync("api/Account/Logout");
 
-        //    if (response.IsSuccessStatusCode)
-        //    {
+                //ViewBag.Message = response.Content.ReadAsStringAsync().Result;
 
-        //        return RedirectToAction("Login", "Account");
-        //        //return RedirectToAction("Value", "Home");
-        //    }
-        //    else
-        //    {
-        //        ModelState.AddModelError("", "Usuario não encontrado");
-        //    }
+                return RedirectToAction("Value", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Usuario não encontrado");
 
-        //    return RedirectToAction("Login", "Account");
-        //}
+                return RedirectToAction("Value", "Home");
+            }         
+        }
 
         protected override void Dispose(bool disposing)
         {
