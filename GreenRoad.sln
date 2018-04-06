@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Web", "GreenRoad.Web\GreenRoad.Web.csproj", "{4427BABA-D620-41DD-858E-FC5F73034F9C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Web.Tests", "GreenRoad.Web.Tests\GreenRoad.Web.Tests.csproj", "{866ECE6F-E3CB-4181-AEA3-8816DB1E4DAA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Api", "GreenRoad.Api\GreenRoad.Api.csproj", "{E95A4008-F7FA-4E98-9FC6-39C450A0F976}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Api.Tests", "GreenRoad.Api.Tests\GreenRoad.Api.Tests.csproj", "{F08B4CB8-8AB1-4849-8F0B-B9DEEE16BB5F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Domain", "GreenRoad.Domain\GreenRoad.Domain.csproj", "{B7557BA8-DCC0-4841-AD63-A11F4CE99415}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.DataAccess", "GreenRoad.DataAccess\GreenRoad.DataAccess.csproj", "{49E60013-D8D8-4561-A953-146FCAB51F09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Api", "GreenRoad.Api\GreenRoad.Api.csproj", "{A414B68E-BF41-4336-8AF1-1AF1813B988B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenRoad.Web", "GreenRoad.Web\GreenRoad.Web.csproj", "{6E64AE69-EDC3-4B94-A2EA-2431DE83593B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,22 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4427BABA-D620-41DD-858E-FC5F73034F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4427BABA-D620-41DD-858E-FC5F73034F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4427BABA-D620-41DD-858E-FC5F73034F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4427BABA-D620-41DD-858E-FC5F73034F9C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{866ECE6F-E3CB-4181-AEA3-8816DB1E4DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{866ECE6F-E3CB-4181-AEA3-8816DB1E4DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{866ECE6F-E3CB-4181-AEA3-8816DB1E4DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{866ECE6F-E3CB-4181-AEA3-8816DB1E4DAA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E95A4008-F7FA-4E98-9FC6-39C450A0F976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E95A4008-F7FA-4E98-9FC6-39C450A0F976}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E95A4008-F7FA-4E98-9FC6-39C450A0F976}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E95A4008-F7FA-4E98-9FC6-39C450A0F976}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F08B4CB8-8AB1-4849-8F0B-B9DEEE16BB5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F08B4CB8-8AB1-4849-8F0B-B9DEEE16BB5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F08B4CB8-8AB1-4849-8F0B-B9DEEE16BB5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F08B4CB8-8AB1-4849-8F0B-B9DEEE16BB5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7557BA8-DCC0-4841-AD63-A11F4CE99415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7557BA8-DCC0-4841-AD63-A11F4CE99415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7557BA8-DCC0-4841-AD63-A11F4CE99415}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +25,14 @@ Global
 		{49E60013-D8D8-4561-A953-146FCAB51F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49E60013-D8D8-4561-A953-146FCAB51F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49E60013-D8D8-4561-A953-146FCAB51F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A414B68E-BF41-4336-8AF1-1AF1813B988B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A414B68E-BF41-4336-8AF1-1AF1813B988B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A414B68E-BF41-4336-8AF1-1AF1813B988B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A414B68E-BF41-4336-8AF1-1AF1813B988B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E64AE69-EDC3-4B94-A2EA-2431DE83593B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E64AE69-EDC3-4B94-A2EA-2431DE83593B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E64AE69-EDC3-4B94-A2EA-2431DE83593B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E64AE69-EDC3-4B94-A2EA-2431DE83593B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,8 +13,6 @@ namespace GreenRoad.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("Login", "Login", new { controller = "Account", Action = "Login" });
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

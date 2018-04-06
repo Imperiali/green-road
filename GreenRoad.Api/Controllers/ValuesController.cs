@@ -7,7 +7,6 @@ using System.Web.Http;
 
 namespace GreenRoad.Api.Controllers
 {
-    [Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values
@@ -19,8 +18,7 @@ namespace GreenRoad.Api.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            var username = RequestContext.Principal.Identity.Name;
-            return String.Format("Hello {0},", username);
+            return "value";
         }
 
         // POST api/values
