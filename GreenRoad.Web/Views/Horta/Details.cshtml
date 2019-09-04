@@ -1,0 +1,52 @@
+﻿@model GreenRoad.Web.Models.Horta.HortaDetalheModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HortaDetalheModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd class="img-greenroad">
+            <img class="img-responsive img-thumbnail" src="@Model.Foto" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerfilNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerfilNome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Novo Produto", "Create", "Produto") |
+    @Html.ActionLink("Produtos", "Index", "Produto")
+</p>

@@ -1,5 +1,6 @@
 ﻿using GreenRoad.DataAccess;
 using GreenRoad.Domain.Perfil;
+using GreenRoad.Web.Models.Perfil;
 using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -13,14 +14,14 @@ using System.Web.Mvc;
 
 namespace GreenRoad.Web.Controllers
 {
+    [Authorize]
     public class PerfilController : Controller
     {
         ApiClientHelper _clientHelper = new ApiClientHelper();
 
-        private CloudBlobClient _blobClient;
-        private CloudBlobContainer _blobCointainer;
+        BlobClienteHelper _blobHelper = new BlobClienteHelper();
 
-        private const string _blobContainerName = "igor-imperiali";
+        private string connectionString = CloudConfigurationManager.GetSetting("StorageConnectionString");
 
         // GET: Perfil
         public async Task<ActionResult> Index()
@@ -46,17 +47,24 @@ namespace GreenRoad.Web.Controllers
 
         // POST: Perfil/Create
         [HttpPost]
-        public async Task<ActionResult> Create(PerfilDataModel model)
+        public async Task<ActionResult> Create(PerfilBindingModel perfil)
         {
+            var model = new PerfilDataModel()
+            {
+                Email = perfil.Email,
+                Nome = perfil.Nome,
+                Sobrenome = perfil.Sobrenome                
+            };
+
             try
             {
                 HttpFileCollectionBase files = Request.Files;
 
                 int fileCount = files.Count;
 
-                await SetupCloudBlob();
+                await _blobHelper.SetupCloudBlob(connectionString);
 
-                var blob = _blobCointainer.GetBlockBlobReference(GetRandomBlobName(files[0].FileName));
+                var blob = _blobHelper._blobCointainer.GetBlockBlobReference(_blobHelper.GetRandomBlobName(files[0].FileName));
 
                 await blob.UploadFromStreamAsync(files[0].InputStream);
 
@@ -86,6 +94,18 @@ namespace GreenRoad.Web.Controllers
         {
             try
             {
+                HttpFileCollectionBase files = Request.Files;
+
+                int fileCount = files.Count;
+
+                await _blobHelper.SetupCloudBlob(connectionString);
+
+                var blob = _blobHelper._blobCointainer.GetBlockBlobReference(_blobHelper.GetRandomBlobName(files[0].FileName));
+
+                await blob.UploadFromStreamAsync(files[0].InputStream);
+
+                model.Foto = blob.StorageUri.PrimaryUri.ToString();
+
                 await _clientHelper.PutPerfilAsync(id, model);
 
                 return RedirectToAction("Index");
@@ -118,29 +138,6 @@ namespace GreenRoad.Web.Controllers
             {
                 return View();
             }
-        }
-        private async Task SetupCloudBlob()
-        {
-            var connectionString = CloudConfigurationManager.GetSetting("StorageConnectionString");
-            var storageAccount = CloudStorageAccount.Parse(connectionString);
-
-            _blobClient = storageAccount.CreateCloudBlobClient();
-            _blobCointainer = _blobClient.GetContainerReference(_blobContainerName);
-
-            await _blobCointainer.CreateIfNotExistsAsync();
-
-            var permission = new BlobContainerPermissions
-            {
-                PublicAccess = BlobContainerPublicAccessType.Blob
-            };
-
-            await _blobCointainer.SetPermissionsAsync(permission);
-        }
-
-        private string GetRandomBlobName(string filename)
-        {
-            string ext = Path.GetExtension(filename);
-            return string.Format("{0:10}_{1}{2}", DateTime.Now.Ticks, Guid.NewGuid(), ext);
-        }
+        }        
     }
 }

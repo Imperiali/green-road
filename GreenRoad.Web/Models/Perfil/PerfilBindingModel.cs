@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenRoad.Domain.Perfil
+namespace GreenRoad.Web.Models.Perfil
 {
-    public class PerfilDataModel
+    public class PerfilBindingModel
     {
         public int Id { get; set; }
         public string Nome { get; set; }

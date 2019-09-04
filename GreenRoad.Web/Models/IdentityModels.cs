@@ -31,5 +31,35 @@ namespace GreenRoad.Web.Models
         }
 
         public System.Data.Entity.DbSet<GreenRoad.Domain.Perfil.PerfilDataModel> PerfilDataModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Horta.HortaBindingModel> HortaBindingModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Horta.HortaListModel> HortaListModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Horta.HortaDetalheModel> HortaDetalheModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Domain.Galeria.GaleriaDataModel> GaleriaDataModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Galeria.GaleriaDetalheModel> GaleriaDetalheModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Galeria.GaleriaCreateModel> GaleriaCreateModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Domain.Post.PostDataModel> PostDataModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Post.PostDetalheModel> PostDetalheModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Post.PostBindingModel> PostBindingModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Domain.Comentario.ComentarioDataModel> ComentarioDataModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Comentario.ComentarioDetalheModel> ComentarioDetalheModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Comentario.ComentarioBindingModel> ComentarioBindingModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Domain.Produto.ProdutoDataModel> ProdutoDataModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Produto.ProdutoDetalheModel> ProdutoDetalheModels { get; set; }
+
+        public System.Data.Entity.DbSet<GreenRoad.Web.Models.Produto.ProdutoBindingModel> ProdutoBindingModels { get; set; }
     }
 }

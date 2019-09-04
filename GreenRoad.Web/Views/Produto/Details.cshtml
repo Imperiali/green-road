@@ -1,4 +1,4 @@
-﻿@model GreenRoad.Domain.Perfil.PerfilDataModel
+﻿@model GreenRoad.Web.Models.Produto.ProdutoDetalheModel
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>PerfilDataModel</h4>
+    <h4>ProdutoDetalheModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -19,19 +19,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Sobrenome)
+            @Html.DisplayNameFor(model => model.Preco)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Sobrenome)
+            @Html.DisplayFor(model => model.Preco)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Quantidade)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Email)
+            @Html.DisplayFor(model => model.Quantidade)
         </dd>
 
         <dt>
@@ -43,11 +43,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Pontos)
+            @Html.DisplayNameFor(model => model.HortaTitulo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Pontos)
+            @Html.DisplayFor(model => model.HortaTitulo)
         </dd>
 
     </dl>
@@ -55,7 +55,5 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index") |
-    @Html.ActionLink("Hortas", "Index", "Horta") |
-    @Html.ActionLink("Postagens", "Index", "Post") |
-    @Html.ActionLink("Galeria", "Index", "Galeria")
+    @Html.ActionLink("Horta", "Details", "Horta", new { id = Model.HortaId}, null)
 </p>

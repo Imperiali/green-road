@@ -47,7 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comentario\ComentarioDataModel.cs" />
+    <Compile Include="Galeria\GaleriaDataModel.cs" />
+    <Compile Include="Horta\HortaDataModel.cs" />
     <Compile Include="Perfil\PerfilDataModel.cs" />
+    <Compile Include="Post\PostDataModel.cs" />
+    <Compile Include="Produto\ProdutoDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

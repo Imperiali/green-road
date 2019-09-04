@@ -1,0 +1,34 @@
+﻿@model GreenRoad.Web.Models.Galeria.GaleriaDetalheModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GaleriaDetalheModel</h4>
+    <hr />
+    <dl class="dl-horizontal">        
+        <dt>
+            @Html.DisplayNameFor(model => model.PerfilNome)
+        </dt>
+
+        <dd>
+            @Html.ActionLink(@Model.PerfilNome, "Details", "Perfil", new { id = @Model.PerfilId, @class = "" }, null)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FotoUrl)
+        </dt>
+
+        <dd class="img-greenroad">
+            <img class="img-responsive img-thumbnail" src="@Model.FotoUrl" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

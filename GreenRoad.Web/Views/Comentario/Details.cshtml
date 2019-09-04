@@ -1,0 +1,46 @@
+﻿@model GreenRoad.Web.Models.Comentario.ComentarioDetalheModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ComentarioDetalheModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PerfilNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PerfilNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Perfil", "Details", "Perfil", new { id = Model.PerfilId }, null)  |
+    @Html.ActionLink("Postagem", "Details", "Post", new { id = Model.PostId }, null)  |
+</p>
